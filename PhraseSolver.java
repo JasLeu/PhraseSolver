@@ -8,9 +8,17 @@ import java.util.Scanner;
 public class PhraseSolver
 {
   /* your code here - attributes */
-
+  private Player player1;
+  private Player player2;
+  private Board game;
+  private boolean solved;
   /* your code here - constructor(s) */ 
-
+  public PhraseSolver() {
+    Player player1 = new Player();
+    Player player2 = new Player();
+    Board game = new Board();
+    solved = false;
+  }
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */

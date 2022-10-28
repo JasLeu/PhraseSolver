@@ -2,18 +2,26 @@
  * Activity 2.5.2
  *
  * A Board class the PhraseSolverGame
+ * 
+ * Authors: Isaac Johnson and Jason Leung
  */
 import java.util.Scanner;
 import java.io.File;
 
 public class  Board
 {
+  /* attributes */
   private String solvedPhrase;
   private String phrase;
   private int currentLetterValue; 
 
   /* your code here - constructor(s) */ 
-  
+  public Board() {
+    solvedPhrase = "";
+    phrase = loadPhrase();
+    System.out.println("Phrase: " + phrase); // temp test code
+    setLetterValue();
+  }
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
