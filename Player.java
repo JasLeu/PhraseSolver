@@ -16,7 +16,7 @@ public class Player
   public Player() {
     points = 0;
     
-    System.out.println("Name: ");
+    System.out.print("Name: ");
     name = sc.nextLine();
     System.out.println("Welcome to the game, " + name + "!");
 

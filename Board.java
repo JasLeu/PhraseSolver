@@ -22,8 +22,20 @@ public class  Board
     System.out.println("Phrase: " + phrase); // temp test code
     setLetterValue();
   }
+
   /* your code here - accessor(s) */
-  
+  public String getPhrase() {
+    return phrase;
+  }
+
+  public String getSolvedPhrase() {
+    return solvedPhrase;
+  }
+
+  public int getLetterValue() {
+    return currentLetterValue;
+  }
+
   /* your code here - mutator(s)  */
 
 
@@ -90,24 +102,35 @@ public class  Board
     return tempPhrase;
   }  
 
-  public boolean guessLetter(String guess)
+  /** Method for taking in a guessed letter
+   * 
+   *  Preconditions: Must be a valid letter.
+   *  Postconditions: Returns the found letter and sets solvedPhrase to the newSolvedPhrase
+   * 
+   * @param guess the guessed letter from input
+   * @return foundLetter
+   */
+  public boolean guessLetter(String guess)  // a method header + signature
   {
-    boolean foundLetter = false;
-    String newSolvedPhrase = "";
+    // variables declared + initialized
+    boolean foundLetter = false;   // foundLetter is false at first
+    String newSolvedPhrase = "";   // newSolvedPhrase is empty, gets concatenated with the letters in the solvedPhrase
     
-    for (int i = 0; i < phrase.length(); i++)
+    // loop to go through every letter in the String
+    for (int i = 0; i < phrase.length(); i++) // runs a loop through the entire length of the String
     {
-      if (phrase.substring(i, i + 1).equals(guess))
+      // conditional - returns true if guessed letter is in phrase, returns false if it isn't
+      if (phrase.substring(i, i + 1).equals(guess))  // if loop to check if guessed letter is in the phrase
       {
-        newSolvedPhrase += guess + " ";
-        foundLetter = true;
+        newSolvedPhrase += guess + " "; // adds guessed letter and a space and sets foundLetter to true
+        foundLetter = true; // sets foundLetter to true
       }
-      else
+      else // executes when the letter in phrase is not the letter in guess
       {
-        newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  
+        newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";  // concatenates the letter and a space to newSolvedPhrase
       }
     }
-    solvedPhrase = newSolvedPhrase;
-    return foundLetter;
-  } 
-} 
+    solvedPhrase = newSolvedPhrase; // updates solvedPhrase to 
+    return foundLetter; // returns the new String
+  } // end of the loop
+} // end of Board

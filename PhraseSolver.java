@@ -12,13 +12,15 @@ public class PhraseSolver
   private Player player2;
   private Board game;
   private boolean solved;
+
   /* your code here - constructor(s) */ 
   public PhraseSolver() {
-    Player player1 = new Player();
-    Player player2 = new Player();
-    Board game = new Board();
+    player1 = new Player();
+    player2 = new Player();
+    game = new Board();
     solved = false;
   }
+
   /* your code here - accessor(s) */
   
   /* your code here - mutator(s)  */
@@ -30,15 +32,28 @@ public class PhraseSolver
 
     Scanner input = new Scanner(System.in);
     
-    boolean correct = true;
+    boolean correct = true; 
     while (!solved) 
     {
       
       /* your code here - game logic */
+      if(currentPlayer == 1) {
+        System.out.println(player1.getName() + "'s guess: ");
+
+      } else {
+        System.out.println(player2.getName() + "'s guess: ");
+
+      }
+
       
-      
+      System.out.println("The next letter value is " + game.getLetterValue());
+
+      game.getSolvedPhrase();
       /* your code here - determine how game ends */
-      solved = true; 
+      //if (game.getSolvedPhrase().equals(game.getPhrase())) {
+        solved = true; 
+      //}
+      
     } 
    
   }
